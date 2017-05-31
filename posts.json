@@ -1,0 +1,18 @@
+{ "posts": [{
+      "title": "Dog ate burrito.",
+      "body": "Dog ate burrito off of table and was very happy.",
+      "img": "https://pbs.twimg.com/media/CXbs0x_UoAAO_QO.jpg",
+      "created": "Yesterday"
+    }, {
+      "title": "Dog ate fancy dinner.",
+      "body": "Dog ate fancy dinner off of table and was very happy.",
+      "img": "https://www.rover.com/blog/wp-content/uploads/2014/06/dogdinner.jpg",
+      "created": "Today"
+    }, {
+      "title": "Dog ate ramen.",
+      "body": "Dog ate ramen off of table and was very happy.",
+      "img": "https://68.media.tumblr.com/2662dfdbd6b982ba0547c19e00012214/tumblr_o3aonvQl6H1ugk6m4o1_1280.jpg",
+      "created": "Last Week"
+    }
+  ]
+}
