@@ -5,10 +5,10 @@ export default Ember.Component.extend({
   addNewPost: false,
   actions: {
     postFormShow() {
-      var addNewPost = true;
-      this.set('addNewPost', addNewPost);
-      console.log('new-post.js addNewPost:', addNewPost);
-      this.sendAction('postFormShow', addNewPost);
+      this.set('addNewPost', true);
+    },
+    postFormHide() {
+      this.set('addNewPost', false);
     },
     savePost () {
       var params = {

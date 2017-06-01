@@ -1,20 +1,35 @@
 {{#if addNewPost}}
-  <form>
-    <h2>Add New Post</h2>
-    <div>
-      <label for="title">Title</label>
-      {{input value=title id='title'}}
+  <div class="row">
+    <div class="" id="newPost">
+      <button {{action 'postFormHide'}}>Back</button>
+      <form>
+        <h2>Add New Post</h2>
+        <div>
+          <label for="title">Title</label>
+          {{input value=title id='title'}}
+        </div>
+        <div>
+          <label for="body">Body</label>
+          {{textarea value=body id='body'}}
+        </div>
+        <div>
+          <label for="img">Image</label>
+          {{input value=img id='img'}}
+        </div>
+        <button {{action 'savePost'}}>Save</button>
+      </form>
     </div>
-    <div>
-      <label for="body">Body</label>
-      {{textarea value=body id='body'}}
-    </div>
-    <div>
-      <label for="img">Image</label>
-      {{input value=img id='img'}}
-    </div>
-    <button {{action 'savePost'}}>Save</button>
-  </form>
+  </div>
 {{else}}
-  <button {{action 'postFormShow'}}>New Post</button>
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Recent Posts</h2>
+    </div>
+    <div class="col-sm-6" id="newPost">
+      <button {{action 'postFormShow'}}>New Post</button>
+    </div>
+  </div>
+  {{#each model.posts as |post|}}
+    {{post-tile post=post}}
+  {{/each}}
 {{/if}}

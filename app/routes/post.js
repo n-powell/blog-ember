@@ -1,10 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model() {
-    return Ember.RSVP.hash({
-      posts: this.store.findAll('post')
-    });
+  model(params) {
+    return this.store.findRecord('post', params.post_id);
   },
-  
 });
