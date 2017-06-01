@@ -3,17 +3,17 @@
     <h2>Add Update Post</h2>
     <div>
       <label for="title">Title</label>
-      {{input value=title id='updateTitle' placeholder=model.title}}
+      {{input value=title id='updateTitle' placeholder=model.post.title}}
     </div>
     <div>
       <label for="body">Body</label>
-      {{textarea value=body id='updateBody' placeholder=model.body}}
+      {{textarea value=body id='updateBody' placeholder=model.post.body}}
     </div>
     <div>
       <label for="img">Image</label>
-      {{input value=img id='updateImg' placeholder=model.img}}
+      {{input value=img id='updateImg' placeholder=model.post.img}}
     </div>
-    <button {{action 'update' model}}>Update</button>
+    <button {{action 'update' model.post}}>Update</button>
   </form>
 {{else}}
   <button {{action 'showUpdateForm'}}>Update</button>

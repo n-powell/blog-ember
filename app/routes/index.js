@@ -1,5 +1,4 @@
 import Ember from 'ember';
-var addNewPost1 = true;
 
 export default Ember.Route.extend({
   model() {
