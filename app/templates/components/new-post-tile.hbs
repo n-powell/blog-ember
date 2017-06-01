@@ -1,0 +1,22 @@
+{{#if addNewPost1}}
+  <div class="row">
+    <div class="col-sm-6" id="newPost">
+      {{new-post savePost="savePost" postFormShow="postFormShow"}}
+      <p>
+        test
+      </p>
+    </div>
+  </div>
+{{else}}
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Recent Posts</h2>
+    </div>
+    <div class="col-sm-6" id="newPost">
+      {{new-post savePost="savePost" postFormShow="postFormShow"}}
+    </div>
+  </div>
+  {{#each model.posts as |post|}}
+    {{post-tile post=post}}
+  {{/each}}
+{{/if}}
