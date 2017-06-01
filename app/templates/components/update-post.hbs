@@ -1,0 +1,20 @@
+{{#if showUpdateForm}}
+  <form>
+    <h2>Add Update Post</h2>
+    <div>
+      <label for="title">Title</label>
+      {{input value=title id='updateTitle' placeholder=model.title}}
+    </div>
+    <div>
+      <label for="body">Body</label>
+      {{textarea value=body id='updateBody' placeholder=model.body}}
+    </div>
+    <div>
+      <label for="img">Image</label>
+      {{input value=img id='updateImg' placeholder=model.img}}
+    </div>
+    <button {{action 'update' model}}>Update</button>
+  </form>
+{{else}}
+  <button {{action 'showUpdateForm'}}>Update</button>
+{{/if}}
