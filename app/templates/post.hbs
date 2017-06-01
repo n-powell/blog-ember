@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel">
   <div class="panel-heading">
     <h3 class="panel-title">
       {{model.post.title}} {{model.post.created}}
@@ -9,10 +9,10 @@
     <p>{{model.post.body}}</p>
   </div>
 </div>
-<button {{action 'delete' model}}>Delete</button>
+<button {{action 'delete' model.post}}>Delete</button>
 {{update-post model=model parms=params update="update"}}
 <hr>
 {{new-comment saveComment="saveComment" model=model}}
 {{#each model.post.comments as |comment|}}
-  {{list-comment comment=comment}}
+  {{list-comment comment=comment destroyComment="destroyComment" updateComment="updateComment"}}
 {{/each}}

@@ -3,14 +3,13 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   showUpdateForm: false,
   actions: {
-    update(model) {
+    updateComment(comment) {
       var params = {
-        title: this.get('title'),
+        name: this.get('name'),
         body: this.get('body'),
-        img: this.get('img'),
       };
       this.set('showUpdateForm', false);
-      this.sendAction('update', model, params);
+      this.sendAction('updateComment', comment, params);
     },
     showUpdateForm() {
       this.set('showUpdateForm', true);

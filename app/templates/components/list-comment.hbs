@@ -3,4 +3,6 @@
   <p>
     {{comment.body}}
   </p>
+  {{update-comment comment=comment params=params updateComment="updateComment"}}
+  <button {{action 'delete' comment}}>Delete Comment</button>
 </div>

@@ -1,0 +1,16 @@
+{{#if showUpdateForm}}
+  <form>
+    <h2>Update Comment</h2>
+    <div>
+      <label for="name">Name</label>
+      {{input value=name id='updateName' placeholder=comment.name}}
+    </div>
+    <div>
+      <label for="body">Body</label>
+      {{textarea value=body id='updateCommentBody' placeholder=comment.body}}
+    </div>
+    <button {{action 'updateComment' comment}}>Update</button>
+  </form>
+{{else}}
+  <button {{action 'showUpdateForm'}}>Update</button>
+{{/if}}

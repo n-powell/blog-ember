@@ -16,10 +16,14 @@ export default Ember.Route.extend({
       model.save();
       this.transitionTo('index');
     },
-
-    delete(model) {
+    delete(post) {
       if (confirm('Are you sure you want to delete this post?')) {
-        model.destroyRecord();
+        var comment_deletions = post.get('comments').map(function(comment) {
+          return comment.destroyRecord();
+        });
+        Ember.RSVP.all(comment_deletions).then(function() {
+          return post.destroyRecord();
+        });
         this.transitionTo('index');
       }
     },
@@ -30,7 +34,20 @@ export default Ember.Route.extend({
       newComment.save().then(function() {
         return post.save();
       });
-      this.transition.refresh();
+      transition.refresh();
+    },
+    updateComment(comment, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          comment.set(key,params[key]);
+        }
+      });
+      comment.save();
+      transition.refresh();
+    },
+    destroyComment(comment) {
+      comment.destroyRecord();
+      transition.refresh();
     }
   }
 });
